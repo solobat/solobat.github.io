@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Steward 攻略之扩展管理篇 | tomasy 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Steward 作为一个浏览器启动器，你可以通过输入某些命令，就能完成扩展、书签、标签页管理等大部分浏览器操作。 而开发 Steward 的初衷其实是为了方便禁用、启用扩展，当然对扩展的管理不只这二种，这篇攻略将为大家详细介绍一下。 Steward 是开源项目，代码托管在 Github 上，从 Chrome应用商店 安装，或 离线下载，官网是oksteward.com，论坛是bbs.okstewa">
+<meta name="keywords" content="Steward,效率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Steward 攻略之扩展管理篇">
+<meta property="og:url" content="https://const.app/2018/04/30/Steward-攻略之扩展管理篇/index.html">
+<meta property="og:site_name" content="tomasy 的博客">
+<meta property="og:description" content="Steward 作为一个浏览器启动器，你可以通过输入某些命令，就能完成扩展、书签、标签页管理等大部分浏览器操作。 而开发 Steward 的初衷其实是为了方便禁用、启用扩展，当然对扩展的管理不只这二种，这篇攻略将为大家详细介绍一下。 Steward 是开源项目，代码托管在 Github 上，从 Chrome应用商店 安装，或 离线下载，官网是oksteward.com，论坛是bbs.okstewa">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/14ca5c601d8eb1dcd789d56a45fc00f8.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/52a9cd2068f8915f3c04c143af77b0c3.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/87bbfe85b62445b1a237293e47cb810d.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/4f6ee72ee937e46103a00d0753f23e7c.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/3279d0d93509d7d0230355db97a2f60d.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/8786e41e91a492da93cbe5f107470bd9.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/1452d93d74707fa2e0a701dc3bae81e0.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/1ed78fc2ffbbfdb76e3b9d266387c44d.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/bbf5d7550cc8901b1d4067825ab1441d.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/4a532f7ec7cf7e4d82e878c97ec25f7c.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/04/01/5a8bc600e3780aea6a99b9d499c6d3ca.gif">
+<meta property="og:updated_time" content="2019-11-05T06:56:25.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Steward 攻略之扩展管理篇">
+<meta name="twitter:description" content="Steward 作为一个浏览器启动器，你可以通过输入某些命令，就能完成扩展、书签、标签页管理等大部分浏览器操作。 而开发 Steward 的初衷其实是为了方便禁用、启用扩展，当然对扩展的管理不只这二种，这篇攻略将为大家详细介绍一下。 Steward 是开源项目，代码托管在 Github 上，从 Chrome应用商店 安装，或 离线下载，官网是oksteward.com，论坛是bbs.okstewa">
+<meta name="twitter:image" content="https://cdn.sspai.com/2018/04/01/14ca5c601d8eb1dcd789d56a45fc00f8.gif">
+  
+    <link rel="alternative" href="/atom.xml" title="tomasy 的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-Steward-攻略之扩展管理篇" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Steward 攻略之扩展管理篇
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/04/30/Steward-攻略之扩展管理篇/" class="article-date">
+  <time datetime="2018-04-30T10:33:58.000Z" itemprop="datePublished">2018-04-30</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Steward 作为一个浏览器启动器，你可以通过输入某些命令，就能完成扩展、书签、标签页管理等大部分浏览器操作。</p>
+<p>而开发 Steward 的初衷其实是为了方便禁用、启用扩展，当然对扩展的管理不只这二种，这篇攻略将为大家详细介绍一下。</p>
+<p>Steward 是开源项目，代码托管在 <a href="https://github.com/solobat/Steward" target="_blank" rel="noopener">Github</a> 上，从 <a href="https://chrome.google.com/webstore/detail/dnkhdiodfglfckibnfcjbgddcgjgkacd" target="_blank" rel="noopener">Chrome应用商店</a> 安装，或 <a href="http://owsjc7iz3.bkt.clouddn.com/steward-3.4.2.crx" target="_blank" rel="noopener">离线下载</a>，官网是<a href="http://oksteward.com/" target="_blank" rel="noopener">oksteward.com</a>，论坛是<a href="http://bbs.oksteward.com/" target="_blank" rel="noopener">bbs.oksteward.com</a>。</p>
+<a id="more"></a>
+<h2 id="启用扩展"><a href="#启用扩展" class="headerlink" title="启用扩展"></a>启用扩展</h2><p>命令：<code>on</code></p>
+<p><img src="https://cdn.sspai.com/2018/04/01/14ca5c601d8eb1dcd789d56a45fc00f8.gif" alt="on 命令启用扩展"></p>
+<h3 id="批量启用"><a href="#批量启用" class="headerlink" title="批量启用"></a>批量启用</h3><p>使用命令启用扩展是挺方便的，但缺点在于只能针对单个扩展，而通过创建 Workflow 则可以批量启用扩展(详见附录)。</p>
+<p><img src="https://cdn.sspai.com/2018/04/01/52a9cd2068f8915f3c04c143af77b0c3.gif" alt="批量启用扩展"></p>
+<h2 id="启动应用"><a href="#启动应用" class="headerlink" title="启动应用"></a>启动应用</h2><p>命令：<code>run</code></p>
+<p><img src="https://cdn.sspai.com/2018/04/01/87bbfe85b62445b1a237293e47cb810d.gif" alt="run 命令打开应用"></p>
+<h2 id="禁用扩展"><a href="#禁用扩展" class="headerlink" title="禁用扩展"></a>禁用扩展</h2><p>命令：<code>off</code></p>
+<p><img src="https://cdn.sspai.com/2018/04/01/4f6ee72ee937e46103a00d0753f23e7c.gif" alt="off 命令禁用扩展"></p>
+<h3 id="一键禁用"><a href="#一键禁用" class="headerlink" title="一键禁用"></a>一键禁用</h3><p>同样，使用 Workflow 可以一键禁用所有扩展(详见附录)。</p>
+<p><img src="https://cdn.sspai.com/2018/04/01/3279d0d93509d7d0230355db97a2f60d.gif" alt="一键禁用所有扩展"></p>
+<p>上述命令会将除 Steward 之外的所有扩展禁用，如果要更彻底一些，可以在 Workflow 中加上 <code>off Steward</code> 命令。</p>
+<h2 id="删除扩展"><a href="#删除扩展" class="headerlink" title="删除扩展"></a>删除扩展</h2><p>命令：<code>del</code></p>
+<p><img src="https://cdn.sspai.com/2018/04/01/8786e41e91a492da93cbe5f107470bd9.gif" alt="del 命令删除扩展"></p>
+<h2 id="设置扩展"><a href="#设置扩展" class="headerlink" title="设置扩展"></a>设置扩展</h2><p>通常，每个扩展都有一个设置页面，以往我们只能点击扩展右键菜单中的选项打开它。</p>
+<p>命令：<code>set</code></p>
+<p><img src="https://cdn.sspai.com/2018/04/01/1452d93d74707fa2e0a701dc3bae81e0.gif" alt="set 命令设置扩展"></p>
+<h2 id="查看扩展"><a href="#查看扩展" class="headerlink" title="查看扩展"></a>查看扩展</h2><p>命令：<code>ext</code> 查看浏览器中的扩展详情</p>
+<p><img src="https://cdn.sspai.com/2018/04/01/1ed78fc2ffbbfdb76e3b9d266387c44d.gif" alt="ext 命令查看浏览器中的扩展详情"></p>
+<p>按住 <code>Shift</code> 时，将打开扩展的主页，通常是 Chrome WebStore 详情或扩展的官网。</p>
+<p><img src="https://cdn.sspai.com/2018/04/01/bbf5d7550cc8901b1d4067825ab1441d.gif" alt="ext 命令 Shift + Enter 打开扩展主页"></p>
+<h2 id="扩展协作"><a href="#扩展协作" class="headerlink" title="扩展协作"></a>扩展协作</h2><p>除了对扩展进行管理外，Steward 还能与某些扩展进行协作交互，前提是这些扩展有开放的接口。</p>
+<p>以<a href="https://chrome.google.com/webstore/detail/%E5%8D%95%E8%AF%8D%E5%B0%8F%E5%8D%A1%E7%89%87-%E6%9F%A5%E8%AF%8D%E6%94%B6%E9%9B%86%E8%83%8C%E5%8D%95%E8%AF%8D/oegblnjiajbfeegijlnblepdodmnddbk" target="_blank" rel="noopener">单词小卡片扩展</a>为例 – 它是我的另一款<a href="https://github.com/solobat/wordcard" target="_blank" rel="noopener">开源</a>浏览器扩展，为了配合 Steward 而提供了对外接口。</p>
+<p><img src="https://cdn.sspai.com/2018/04/01/4a532f7ec7cf7e4d82e878c97ec25f7c.gif" alt="单词小卡片扩展"></p>
+<p>单词小卡片扩展支持单词查询、例句收集、卡片制作以及背单词功能。为了<strong>更便捷</strong>的背单词，我开放了一个相应的 Steward 插件，命令为 <code>wd</code>。</p>
+<p><img src="https://cdn.sspai.com/2018/04/01/5a8bc600e3780aea6a99b9d499c6d3ca.gif" alt="wd 命令背单词"></p>
+<p>如果你对于其它扩展也有类似的需求，可以去请求它的开发者提供对外接口，之后我就可以为其开发一个相应的插件与之配合使用。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="批量启用扩展的-Workflow"><a href="#批量启用扩展的-Workflow" class="headerlink" title="批量启用扩展的 Workflow"></a>批量启用扩展的 Workflow</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">on vimum</span><br><span class="line"></span><br><span class="line">on stylish</span><br><span class="line"></span><br><span class="line">on simread</span><br><span class="line"></span><br><span class="line">on save to pocket|2</span><br><span class="line"></span><br><span class="line">on adblock|2</span><br><span class="line"></span><br><span class="line">on dancixiaokapian|2</span><br><span class="line"></span><br><span class="line">on 1password</span><br><span class="line"></span><br><span class="line">on weibotuchuang</span><br></pre></td></tr></table></figure>
+<h3 id="禁用所有扩展-Steward-除外"><a href="#禁用所有扩展-Steward-除外" class="headerlink" title="禁用所有扩展(Steward 除外)"></a>禁用所有扩展(Steward 除外)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">off |all</span><br></pre></td></tr></table></figure>
+<h3 id="禁用所有扩展"><a href="#禁用所有扩展" class="headerlink" title="禁用所有扩展"></a>禁用所有扩展</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">off |all</span><br><span class="line"></span><br><span class="line">off Steward</span><br></pre></td></tr></table></figure>
+<h2 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h2><p><a href="https://sspai.com/post/42048" target="_blank" rel="noopener">在 Chrome 里用「Alfred」是什么体验？Steward 把效率启动器带进了浏览器</a></p>
+<p><a href="https://sspai.com/post/42088" target="_blank" rel="noopener">Chrome 命令启动器 Steward 的进阶用法：Workflow 批量操作</a></p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/30/浏览器启动器-Steward-攻略之属于你自己的新标签页/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          浏览器启动器 Steward 攻略之属于你自己的新标签页
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/30/如何使用-Chrome-命令启动器-Steward-快速浏览网站/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何使用 Chrome 命令启动器 Steward 快速浏览网站</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/solobat" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2020 tomasy 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+		- Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+		- <a href="http://beian.miit.gov.cn" target="_blank">京ICP备17060194号-2</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/solobat" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

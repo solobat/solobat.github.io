@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Chrome 命令启动器 Steward 的进阶用法：Workflow 批量操作 | tomasy 的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="此 Workflow 非大家熟知的 iOS 自动化工具，而是 Chrome 效率插件 Steward 里的一个进阶功能，可以用一条简单的命令代替原先繁琐、重复的操作，节省大量时间，同时还能拯救鼠标。 在之前的文章里，我介绍了 Steward 的三种模式，而有了 Workflow，Steward 的使用就更简单了。 Steward 是开源项目，代码托管在 Github 上，从 Chrome应用商店">
+<meta name="keywords" content="Steward,效率,Workflow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome 命令启动器 Steward 的进阶用法：Workflow 批量操作">
+<meta property="og:url" content="https://const.app/2018/04/30/Chrome-命令启动器-Steward-的进阶用法：Workflow-批量操作/index.html">
+<meta property="og:site_name" content="tomasy 的博客">
+<meta property="og:description" content="此 Workflow 非大家熟知的 iOS 自动化工具，而是 Chrome 效率插件 Steward 里的一个进阶功能，可以用一条简单的命令代替原先繁琐、重复的操作，节省大量时间，同时还能拯救鼠标。 在之前的文章里，我介绍了 Steward 的三种模式，而有了 Workflow，Steward 的使用就更简单了。 Steward 是开源项目，代码托管在 Github 上，从 Chrome应用商店">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://cdn.sspai.com/2018/01/12/f13faff1ab7efdb9662904611d5a8a47.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/01/12/41cecb29daeee79c98d6e0a7d9435528.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/01/12/b3d28589a8447bf69ff2f2c4fb1259bf.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/01/12/a83519824a3adfe9dd98c95ac3cd3288.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/01/12/86a955f0061ac6c864064e79f6320baf.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/01/12/077f708b715aa55399ae6ebdebc927b2.gif">
+<meta property="og:image" content="https://cdn.sspai.com/2018/01/12/6bd73f3738311ae16cb9151bd8bba46d.png">
+<meta property="og:updated_time" content="2019-11-05T06:56:25.136Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chrome 命令启动器 Steward 的进阶用法：Workflow 批量操作">
+<meta name="twitter:description" content="此 Workflow 非大家熟知的 iOS 自动化工具，而是 Chrome 效率插件 Steward 里的一个进阶功能，可以用一条简单的命令代替原先繁琐、重复的操作，节省大量时间，同时还能拯救鼠标。 在之前的文章里，我介绍了 Steward 的三种模式，而有了 Workflow，Steward 的使用就更简单了。 Steward 是开源项目，代码托管在 Github 上，从 Chrome应用商店">
+<meta name="twitter:image" content="https://cdn.sspai.com/2018/01/12/f13faff1ab7efdb9662904611d5a8a47.gif">
+  
+    <link rel="alternative" href="/atom.xml" title="tomasy 的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-Chrome-命令启动器-Steward-的进阶用法：Workflow-批量操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Chrome 命令启动器 Steward 的进阶用法：Workflow 批量操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2018/04/30/Chrome-命令启动器-Steward-的进阶用法：Workflow-批量操作/" class="article-date">
+  <time datetime="2018-04-30T10:30:26.000Z" itemprop="datePublished">2018-04-30</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此 Workflow 非大家熟知的 iOS 自动化工具，而是 Chrome 效率插件 Steward 里的一个进阶功能，可以用一条简单的命令代替原先繁琐、重复的操作，节省大量时间，同时还能拯救鼠标。</p>
+<p>在<a href="https://sspai.com/post/42121" target="_blank" rel="noopener">之前的文章</a>里，我介绍了 Steward 的三种模式，而有了 Workflow，Steward 的使用就更简单了。</p>
+<p>Steward 是开源项目，代码托管在 <a href="https://github.com/solobat/Steward" target="_blank" rel="noopener">Github</a> 上，从 <a href="https://chrome.google.com/webstore/detail/dnkhdiodfglfckibnfcjbgddcgjgkacd" target="_blank" rel="noopener">Chrome应用商店</a> 安装，或 <a href="http://owsjc7iz3.bkt.clouddn.com/steward-3.3.crx" target="_blank" rel="noopener">离线下载</a>，官网是<a href="http://oksteward.com/" target="_blank" rel="noopener">oksteward.com</a>。</p>
+<h2 id="Steward-的-Workflow-是什么"><a href="#Steward-的-Workflow-是什么" class="headerlink" title="Steward 的 Workflow 是什么"></a>Steward 的 Workflow 是什么</h2><p>开发 Workflow 功能的动力就来自我自己的生活。每天我都会打开相对固定的几个网页浏览资讯，而作为一个 Chrome 用户，我还安装了许多插件，根据不同使用场景频繁禁用、启用。按传统的方式，这些操作总是免不得每次都得<strong>用鼠标点击多次</strong>或者按多个快捷键，操作一多，感觉<strong>手累</strong>还容易有所遗忘。</p>
+<p>之前我就做了一个 Chrome 效率插件 Steward，在觉察到频繁操作的痛点后，我重构了程序的主流程，使之能一次执行多条命令，并给出相应的提示，Workflow 功能就这样诞生了。</p>
+<h2 id="Workflow-能做什么"><a href="#Workflow-能做什么" class="headerlink" title="Workflow 能做什么"></a>Workflow 能做什么</h2><p>在讲解 Workflow 怎么用之前，先通过几个很常见的场景来告诉大家 Workflow 能做什么，具体命令请看文章末尾的附录部分。</p>
+<a id="more"></a>
+<h3 id="打开多个网址"><a href="#打开多个网址" class="headerlink" title="打开多个网址"></a>打开多个网址</h3><blockquote>
+<p>每天上班到公司，先刷一遍常用网站才能安心开始工作</p>
+</blockquote>
+<h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>名称随意，比如「科技产品以及论坛」，每一行都是一个你的常用网址。</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>在任意模式的 Steward 输入框输入：<code>wf keji</code> 或者 <code>wf kjcp</code> 等与 workflow 名称有关的拼音字母、汉字、英文的简写组合形式。</p>
+<p><img src="https://cdn.sspai.com/2018/01/12/f13faff1ab7efdb9662904611d5a8a47.gif" alt="Workflow 动图"></p>
+<h3 id="扩展批量管理"><a href="#扩展批量管理" class="headerlink" title="扩展批量管理"></a>扩展批量管理</h3><blockquote>
+<p>我在家与在公司需要的扩展是不同的，怎么才能快捷、方便的批量处理呢？</p>
+</blockquote>
+<h4 id="批量禁用-–-「禁用所有扩展」"><a href="#批量禁用-–-「禁用所有扩展」" class="headerlink" title="批量禁用 – 「禁用所有扩展」"></a>批量禁用 – 「禁用所有扩展」</h4><p><img src="https://cdn.sspai.com/2018/01/12/41cecb29daeee79c98d6e0a7d9435528.gif" alt="一键禁用所有扩展"></p>
+<h4 id="批量启用「常用扩展」"><a href="#批量启用「常用扩展」" class="headerlink" title="批量启用「常用扩展」"></a>批量启用「常用扩展」</h4><p><img src="https://cdn.sspai.com/2018/01/12/b3d28589a8447bf69ff2f2c4fb1259bf.gif" alt="批量启用常用扩展"></p>
+<h3 id="网站批量屏蔽与解锁"><a href="#网站批量屏蔽与解锁" class="headerlink" title="网站批量屏蔽与解锁"></a>网站批量屏蔽与解锁</h3><blockquote>
+<p>现在上班时间容易注意力不集中，没几分钟就想刷一波网站，怎么才能管住这不听话的鼠标呢？</p>
+</blockquote>
+<h4 id="批量屏蔽的-workflow-–-「屏蔽网站」"><a href="#批量屏蔽的-workflow-–-「屏蔽网站」" class="headerlink" title="批量屏蔽的 workflow – 「屏蔽网站」"></a>批量屏蔽的 workflow – 「屏蔽网站」</h4><p><img src="https://cdn.sspai.com/2018/01/12/a83519824a3adfe9dd98c95ac3cd3288.gif" alt="批量屏蔽网站论坛"></p>
+<h4 id="批量解锁的-workflow-–-「解除屏蔽」"><a href="#批量解锁的-workflow-–-「解除屏蔽」" class="headerlink" title="批量解锁的 workflow – 「解除屏蔽」"></a>批量解锁的 workflow – 「解除屏蔽」</h4><p><img src="https://cdn.sspai.com/2018/01/12/86a955f0061ac6c864064e79f6320baf.gif" alt="一键解锁屏蔽的网站"></p>
+<blockquote>
+<p>我想既禁用所有扩展，同时还要屏蔽一些网站，按你上面的例子，需要用2条命令才行啊，效率还有提高空间吧？</p>
+</blockquote>
+<p>当然的，Steward v3.2.1 以后，正式支持 Workflows 的组合，创建一个名为「开始工作」的 workflow，内容里包含「禁用所有扩展」、「屏蔽网站」两个 Workflow ，这样就能一条命令搞定所有操作：</p>
+<p><img src="https://cdn.sspai.com/2018/01/12/077f708b715aa55399ae6ebdebc927b2.gif" alt="Workflows 的组合"></p>
+<h2 id="Workflow-怎么用"><a href="#Workflow-怎么用" class="headerlink" title="Workflow 怎么用"></a>Workflow 怎么用</h2><p>上面是 Workflow 在常用场景下的典型实例，为了充分利用 Workflow 的强大能力，有必要了解下它的一些规则。</p>
+<h3 id="创建-1"><a href="#创建-1" class="headerlink" title="创建"></a>创建</h3><blockquote>
+<p>Workflow 本质上是多条经过增强的<strong>命令</strong>：命令的要求是能在 Steward 输入框里执行，如果达不到目的，就需要一些增强的语法。</p>
+</blockquote>
+<p>在设置 -&gt; Workflows 面板点击<code>+ New Workflow</code>按钮，然后在右侧的表单中填写，其中<code>Title</code>和<code>Content</code>字段是必填的</p>
+<p><code>Content</code> 的填写需要遵循一点简单的语法:</p>
+<p>基本格式： <code>command|numbers</code> </p>
+<ul>
+<li><p><code>command</code> 是必填的，由 <code>trigger</code> + <code>空格</code> + <code>query</code> 组成，注意不要忘记<strong>空格</strong> </p>
+</li>
+<li><p><code>numbers</code> 是可选的，表示前面的 <code>command</code> 所将作用的条目的数量，只对 <code>trigger</code> 后面带 <code>batch</code> 图标的 command 有效 </p>
+</li>
+</ul>
+<p>以上只是语法的一部分，同时也是最有用的，了解这些已经够用了，更多请看官方<a href="http://oksteward.com/steward-document-zh/Workflows.html#%E5%88%9B%E5%BB%BA" target="_blank" rel="noopener">帮助文档</a></p>
+<p><img src="https://cdn.sspai.com/2018/01/12/6bd73f3738311ae16cb9151bd8bba46d.png" alt="Workflows"></p>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p>在命令框中输入<code>wf</code>将列出所有的 <code>workflow</code>, 选中后按 <code>Enter/Return</code> 将执行 <code>workflow</code>, 完成后将会有 <code>Toast</code> 显示执行的各条命令</p>
+<h2 id="附录命令"><a href="#附录命令" class="headerlink" title="附录命令"></a>附录命令</h2><h3 id="「科技产品以及论坛」"><a href="#「科技产品以及论坛」" class="headerlink" title="「科技产品以及论坛」"></a>「科技产品以及论坛」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">36kr.com</span><br><span class="line"></span><br><span class="line">ifanr.com</span><br><span class="line"></span><br><span class="line">sspai.com</span><br><span class="line"></span><br><span class="line">www.producthunt.com</span><br><span class="line"></span><br><span class="line">next.36kr.com/posts</span><br><span class="line"></span><br><span class="line">www.appinn.com</span><br><span class="line"></span><br><span class="line">zhihu.com</span><br><span class="line"></span><br><span class="line">v2ex.com</span><br></pre></td></tr></table></figure>
+<h3 id="「禁用所有扩展」"><a href="#「禁用所有扩展」" class="headerlink" title="「禁用所有扩展」"></a>「禁用所有扩展」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">off |all</span><br></pre></td></tr></table></figure>
+<h3 id="「常用扩展」"><a href="#「常用扩展」" class="headerlink" title="「常用扩展」"></a>「常用扩展」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">on adblock</span><br><span class="line"></span><br><span class="line">on vimium</span><br><span class="line"></span><br><span class="line">on dancixiaokapian</span><br><span class="line"></span><br><span class="line">on 1password</span><br><span class="line"></span><br><span class="line">on stylish</span><br><span class="line"></span><br><span class="line">on jianyue</span><br></pre></td></tr></table></figure>
+<h3 id="「屏蔽网站」"><a href="#「屏蔽网站」" class="headerlink" title="「屏蔽网站」"></a>「屏蔽网站」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bk zhihu.com</span><br><span class="line"></span><br><span class="line">bk toutiao.com</span><br><span class="line"></span><br><span class="line">bk jandan.net</span><br><span class="line"></span><br><span class="line">bk douban.com</span><br></pre></td></tr></table></figure>
+<h3 id="「解除屏蔽」"><a href="#「解除屏蔽」" class="headerlink" title="「解除屏蔽」"></a>「解除屏蔽」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bk |all</span><br></pre></td></tr></table></figure>
+<h3 id="「开始工作」"><a href="#「开始工作」" class="headerlink" title="「开始工作」"></a>「开始工作」</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wf 屏蔽</span><br><span class="line"></span><br><span class="line">wf 禁用</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>虽然 Steward Workflow 已经很方便了，但不可否认它还有的改进空间。我已经有了一些规划，敬请关注。</p>
+</blockquote>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/30/如何使用-Chrome-命令启动器-Steward-快速浏览网站/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          如何使用 Chrome 命令启动器 Steward 快速浏览网站
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/13/Steward-一款-Chrome-上的类-Alfred-Wox-启动器，键盘党的效率神器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Steward -- 一款 Chrome 上的类 Alfred / Wox 启动器，键盘党的效率神器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/solobat" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2020 tomasy 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+		- Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+		- <a href="http://beian.miit.gov.cn" target="_blank">京ICP备17060194号-2</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/solobat" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
